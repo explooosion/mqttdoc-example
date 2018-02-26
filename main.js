@@ -215,7 +215,7 @@ require([
     }
 
     // render pagetitle
-    var title = apiProject.title ? apiProject.title : 'apiDoc: ' + apiProject.name + ' - ' + apiProject.version;
+    var title = apiProject.title ? apiProject.title : 'mqttDoc: ' + apiProject.name + ' - ' + apiProject.version;
     $(document).attr('title', title);
 
     // remove loader
