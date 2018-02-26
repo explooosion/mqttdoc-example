@@ -36,7 +36,7 @@ define({
       },
       "examples": [{
         "title": "Example usage:",
-        "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"action\": \"create\",\n      \"key\": \"dadkfh\",\n    }",
+        "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"action\": \"create\",\n      \"key\": \"keyid\",\n    }",
         "type": "json"
       }],
       // "examples": [{
