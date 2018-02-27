@@ -27,7 +27,7 @@
         {{/if}}
       {{else}}
         <li {{#if hidden}}class="hide" {{/if}}data-group="{{group}}" data-name="{{name}}" data-version="{{version}}">
-          <a href="#api-{{group}}-{{name}}">{{title}}</a>
+          <a href="#api-{{group}}-{{name}}">{{title}} - {{message}}</a>
         </li>
       {{/if}}
     {{/if}}
@@ -100,7 +100,7 @@
   <script id="template-article" type="text/x-handlebars-template">
   <article id="api-{{article.group}}-{{article.name}}-{{article.version}}" {{#if hidden}}class="hide"{{/if}} data-group="{{article.group}}" data-name="{{article.name}}" data-version="{{article.version}}">
     <div class="pull-left">
-      <h1>{{article.groupTitle}}{{#if article.title}} - {{article.title}}{{/if}}</h1>
+      <h1>{{article.icon}} {{article.message}}{{#if article.title}} - {{article.title}}{{/if}}</h1>
     </div>
     {{#if template.withCompare}}
     <div class="pull-right">
@@ -168,7 +168,6 @@
      {{/each}}
        
     {{/if_gt}}
-
        
     <!-- {{subTemplate "article-param-block" params=article.header _hasType=_hasTypeInHeaderFields section="header"}} -->
     

@@ -2,9 +2,11 @@ define({
   "api": [{
     "type": "topic",
     "url": "Room",
-    "title": "Create room of a Game",
+    "icon": "📢",
+    "message": "Publish",
+    "title": "Create Room",
     "version": "0.0.1",
-    "name": "CreaRoom",
+    "name": "pub-room",
     "group": "Room",
     // "permission": [{
     //   "name": "admin",
@@ -76,6 +78,44 @@ define({
     // },
     "filename": "source/example/example.js",
     "groupTitle": "Room"
-  }
+  },
+  {
+    "type": "topic",
+    "url": "create/keyid",
+    "icon": "🔔",
+    "message": "Subscribe",
+    "title": "Create Room",
+    "version": "0.0.1",
+    "name": "sub-room",
+    "group": "Room",
+    "description": "<p>Create room of a game by master</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [{
+          "group": "Parameter",
+          "type": "String",
+          "optional": false,
+          "field": "result",
+          "description": "<p>Result Name ( success || fail ).</p> "
+        },
+        {
+          "group": "Parameter",
+          "type": "String",
+          "optional": true,
+          "field": "url",
+          "description": "<p>The Game Url.</p> "
+        }
+        ]
+      }
+    },
+    "examples": [{
+      "name": "payload",
+      "title": "Example usage:",
+      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"result\": \"success\",\n      \"url\": \"http://example.com?id=keyid\",\n    }",
+      "type": "json"
+    }],
+    "filename": "source/example/_apidoc.js",
+    "groupTitle": "Room"
+  },
   ]
 });

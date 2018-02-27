@@ -13,8 +13,8 @@ define({
     "content": "<h2 id=\"epilogue\">Epilogue</h2>\n<p>Suggestions, contact, support and error reporting on <a href=\"https://github.com/explooosion/mqttdoc-example/issues\">GitHub</a></p>\n"
   },
   "order": [
-    "CreaRoom",
-    "PostUser"
+    "pub-room",
+    "sub-room",
   ],
   "generator": {
     "version": "0.0.1",
