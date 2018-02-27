@@ -13,12 +13,12 @@ define({
     "content": "<h2 id=\"epilogue\">Epilogue</h2>\n<p>Suggestions, contact, support and error reporting on <a href=\"https://github.com/explooosion/mqttdoc-example/issues\">GitHub</a></p>\n"
   },
   "order": [
-    "pub-move-player",
-    "sub-add-player",
     "pub-status-player",
-    "sub-move-player",
-    "pub-delete-player",
     "sub-status-player",
+    "pub-move-player",
+    "sub-move-player",
+    "sub-add-player",
+    "pub-delete-player",
     "pub-create-room",
     "sub-create-room",
     "pub-join-room",
