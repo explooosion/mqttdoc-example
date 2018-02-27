@@ -302,6 +302,61 @@ define({
   },
   {
     "type": "topic",
+    "url": "movecmd/keyid",
+    "icon": "🔔",
+    "message": "Subscribe",
+    "title": "Move Player",
+    "version": "0.0.1",
+    "name": "sub-move-player",
+    "group": "Player",
+    "description": "<p>Move player of a game by player.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [{
+          "group": "Parameter",
+          "type": "Array",
+          "optional": false,
+          "field": "hero",
+          "description": "<p>The Players Of Hero.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Array",
+          "optional": false,
+          "field": "creep",
+          "description": "<p>The Players Of Creep.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "x",
+          "description": "<p>The Players Object's X Current Position.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "y",
+          "description": "<p>The Players Object's Y Current Position.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "String",
+          "optional": false,
+          "field": "id",
+          "description": "<p>The Players-ID.</p> "
+        }
+        ]
+      }
+    },
+    "examples": [{
+      "name": "payload",
+      "title": "Example usage:",
+      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"hero\": [\n         { \"x\": 31, \"y\": -28, \"id\": \"client1\" },\n         { \"x\": 20, \"y\": -12, \"id\": \"client2\" },\n         { \"x\": 17, \"y\": -33, \"id\": \"client3\" },\n      ]\n      \"creep\": []\n    }",
+      "type": "json"
+    }],
+    "filename": "source/example/example.js",
+    "groupTitle": "Player"
+  },
+  {
+    "type": "topic",
     "url": "delete/keyid",
     "icon": "📢",
     "message": "Publish",
@@ -333,9 +388,9 @@ define({
   },
   {
     "type": "topic",
-    "url": "game/keyid/clientid",
-    "icon": "🔔",
-    "message": "Subscribe",
+    "url": "gamedata/keyid",
+    "icon": "📢",
+    "message": "Publish",
     "title": "Status Player",
     "version": "0.0.1",
     "name": "pub-status-player",
@@ -345,10 +400,40 @@ define({
       "fields": {
         "Parameter": [{
           "group": "Parameter",
+          "type": "Array",
+          "optional": false,
+          "field": "hero",
+          "description": "<p>The Players Of Hero.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Array",
+          "optional": false,
+          "field": "creep",
+          "description": "<p>The Players Of Creep.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "String",
+          "optional": false,
+          "field": "team",
+          "description": "<p>The Players-Team.</p> "
+        }, {
+          "group": "Parameter",
           "type": "String",
           "optional": false,
           "field": "id",
           "description": "<p>The Players-ID.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "x",
+          "description": "<p>The Players Object's X Current Position.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "y",
+          "description": "<p>The Players Object's Y Current Position.</p> "
         }
         ]
       }
@@ -356,7 +441,74 @@ define({
     "examples": [{
       "name": "payload",
       "title": "Example usage:",
-      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"id\": \"client123\",\n    }",
+      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"hero\": [\n         { \"team\": 0, \"id\": 1, \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"id\": 1, \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"id\": 1, \"x\": 32, \"y\": -15 },\n        ],\n      \"creep\": [\n         { \"team\": 0, \"id\": 1, \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"id\": 1, \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"id\": 1, \"x\": 32, \"y\": -15 },\n        ]\n    }",
+      "type": "json"
+    }],
+    "filename": "source/example/example.js",
+    "groupTitle": "Player"
+  },
+  {
+    "type": "topic",
+    "url": "game/keyid/clientid",
+    "icon": "🔔",
+    "message": "Subscribe",
+    "title": "Status Player",
+    "version": "0.0.1",
+    "name": "sub-status-player",
+    "group": "Player",
+    "description": "<p>The player' status of a game.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [{
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "team",
+          "description": "<p>The Players-Team.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "hp",
+          "description": "<p>The Players-HP.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "attack",
+          "description": "<p>The Players-Attack.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "x",
+          "description": "<p>The Players Object's X Current Position.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "y",
+          "description": "<p>The Players Object's Y Current Position.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Array",
+          "optional": false,
+          "field": "others",
+          "description": "<p>Other Players Information.</p> "
+        }, {
+          "group": "Parameter",
+          "type": "Number",
+          "optional": false,
+          "field": "type",
+          "description": "<p>Other Players's Team.</p> "
+        }
+        ]
+      }
+    },
+    "examples": [{
+      "name": "payload",
+      "title": "Example usage:",
+      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"team\": 0,\n      \"hp\": 100,\n      \"attack\": 50,\n      \"x\": 17,\n      \"y\": -33,\n      \"others\": [\n         { \"team\": 0, \"type\": 1, \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"type\": 1, \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"type\": 1, \"x\": 32, \"y\": -15 },\n        ]\n    }",
       "type": "json"
     }],
     "filename": "source/example/example.js",

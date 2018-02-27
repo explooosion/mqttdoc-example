@@ -15,6 +15,9 @@ define({
   "order": [
     "sub-add-player",
     "pub-move-player",
+    "sub-move-player",
+    "pub-status-player",
+    "sub-status-player",
     "pub-delete-player",
     "pub-create-room",
     "sub-create-room",
