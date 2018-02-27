@@ -8,7 +8,7 @@ define({
     "version": "0.0.1",
     "name": "pub-create-room",
     "group": "Room",
-    "description": "<p>Create room of a game by master</p> ",
+    "description": "<p>Create room of a game by master.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -46,7 +46,7 @@ define({
     "version": "0.0.1",
     "name": "sub-create-room",
     "group": "Room",
-    "description": "<p>Create room of a game by master</p> ",
+    "description": "<p>Create room of a game by master.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -84,7 +84,7 @@ define({
     "version": "0.0.1",
     "name": "pub-join-room",
     "group": "Room",
-    "description": "<p>Join room of a game by player</p> ",
+    "description": "<p>Join room of a game by player.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -122,7 +122,7 @@ define({
     "version": "0.0.1",
     "name": "sub-join-room",
     "group": "Room",
-    "description": "<p>Join room of a game by player</p> ",
+    "description": "<p>Join room of a game by player.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -167,7 +167,7 @@ define({
     "version": "0.0.1",
     "name": "pub-delete-room",
     "group": "Room",
-    "description": "<p>Delete room of a game by master or server</p> ",
+    "description": "<p>Delete room of a game by master or server.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -198,7 +198,7 @@ define({
     "version": "0.0.1",
     "name": "sub-add-player",
     "group": "Player",
-    "description": "<p>Add a new player from server</p> ",
+    "description": "<p>Add a new player from server.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -220,7 +220,7 @@ define({
           "type": "Number",
           "optional": false,
           "field": "hp",
-          "description": "<p>The Players-HP</p> "
+          "description": "<p>The Players-HP.</p> "
         },
         {
           "group": "Parameter",
@@ -264,7 +264,7 @@ define({
     "version": "0.0.1",
     "name": "pub-move-player",
     "group": "Player",
-    "description": "<p>Move player of a game by player</p> ",
+    "description": "<p>Move player of a game by player.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -364,7 +364,7 @@ define({
     "version": "0.0.1",
     "name": "pub-delete-player",
     "group": "Player",
-    "description": "<p>Delete player of a game by player or server</p> ",
+    "description": "<p>Delete player of a game by player or server.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [{
@@ -441,7 +441,7 @@ define({
     "examples": [{
       "name": "payload",
       "title": "Example usage:",
-      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"hero\": [\n         { \"team\": 0, \"id\": 1, \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"id\": 1, \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"id\": 1, \"x\": 32, \"y\": -15 },\n        ],\n      \"creep\": [\n         { \"team\": 0, \"id\": 1, \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"id\": 1, \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"id\": 1, \"x\": 32, \"y\": -15 },\n        ]\n    }",
+      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"hero\": [\n         { \"team\": 0, \"id\": \"client1\", \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"id\": \"client2\", \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"id\": \"client3\", \"x\": 32, \"y\": -15 },\n        ],\n      \"creep\": [\n         { \"team\": 0, \"id\": \"client4\", \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"id\": \"client5\", \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"id\": \"client6\", \"x\": 32, \"y\": -15 },\n        ]\n    }",
       "type": "json"
     }],
     "filename": "source/example/example.js",
@@ -508,7 +508,7 @@ define({
     "examples": [{
       "name": "payload",
       "title": "Example usage:",
-      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"team\": 0,\n      \"hp\": 100,\n      \"attack\": 50,\n      \"x\": 17,\n      \"y\": -33,\n      \"others\": [\n         { \"team\": 0, \"type\": 1, \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"type\": 1, \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"type\": 1, \"x\": 32, \"y\": -15 },\n        ]\n    }",
+      "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"team\": 0,\n      \"hp\": 100,\n      \"attack\": 50,\n      \"x\": 17,\n      \"y\": -33,\n      \"others\": [\n         { \"team\": 0, \"id\": \"client2\", \"x\": 17, \"y\": -33 },\n         { \"team\": 0, \"id\": \"client3\", \"x\": -8, \"y\": 54 },\n         { \"team\": 0, \"id\": \"client4\", \"x\": 32, \"y\": -15 },\n        ]\n    }",
       "type": "json"
     }],
     "filename": "source/example/example.js",

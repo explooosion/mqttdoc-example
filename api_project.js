@@ -1,7 +1,7 @@
 define({
-  "name": "mqttdoc-example",
+  "name": "MQTT-DOC-Example",
   "version": "0.0.1",
-  "description": "mqttDoc example project",
+  "description": "Mqtt Doc example project",
   "template": {
     "withCompare": true,
     "withGenerator": true
