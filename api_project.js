@@ -24,10 +24,11 @@ define({
     "pub-join-room",
     "sub-join-room",
     "pub-delete-room",
+    "sub-delete-room",
   ],
   "generator": {
     "version": "0.0.1",
-    "time": "2018-02-27 02:24:00"
+    "time": "2018-03-21 23:47:00"
   },
   "mqttdoc": "0.0.1"
 });
