@@ -25,10 +25,11 @@ define({
     "sub-join-room",
     "pub-delete-room",
     "sub-delete-room",
+    "pub-attack-event",
   ],
   "generator": {
     "version": "0.0.1",
-    "time": "2018-03-21 23:47:00"
+    "time": "2018-03-25 21:11:00"
   },
   "mqttdoc": "0.0.1"
 });

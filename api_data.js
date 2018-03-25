@@ -39,7 +39,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "create/keyid",
+      "url": "create/:keyid",
       "icon": "🔔",
       "message": "Subscribe",
       "title": "Create Room",
@@ -99,6 +99,20 @@ define({
               "type": "String",
               "optional": false,
               "field": "key",
+              "description": "<p>The Master-ID.</p> "
+            },
+            {
+              "group": "Parameter",
+              "type": "Number",
+              "optional": false,
+              "field": "team",
+              "description": "<p>The Players-Team.</p> "
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "id",
               "description": "<p>The Players-ID.</p> "
             }
           ]
@@ -107,7 +121,7 @@ define({
       "examples": [{
         "name": "payload",
         "title": "Example usage:",
-        "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"action\": \"join\",\n      \"key\": \"keyid\",\n    }",
+        "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"action\": \"join\",\n      \"key\": \"keyid\",\n      \"team\": 0,\n      \"id\": \"mqtt_asdfhif\",\n    }",
         "type": "json"
       }],
       "filename": "source/example/example.js",
@@ -115,7 +129,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "join/keyid",
+      "url": "join/:keyid/:id",
       "icon": "🔔",
       "message": "Subscribe",
       "title": "Join Room",
@@ -190,7 +204,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "newplayer/keyid",
+      "url": "newplayer/:keyid",
       "icon": "🔔",
       "message": "Subscribe",
       "title": "Add Player",
@@ -256,7 +270,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "game/keyid",
+      "url": "game/:keyid",
       "icon": "📢",
       "message": "Publish",
       "title": "Move Player",
@@ -301,7 +315,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "movecmd/keyid",
+      "url": "movecmd/:keyid",
       "icon": "🔔",
       "message": "Subscribe",
       "title": "Move Player",
@@ -355,7 +369,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "delete/keyid",
+      "url": "delete/:keyid",
       "icon": "📢",
       "message": "Publish",
       "title": "Delete Player",
@@ -385,7 +399,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "delete/keyid",
+      "url": "delete/:keyid",
       "icon": "🔔",
       "message": "Subscribe",
       "title": "Delete Player",
@@ -415,7 +429,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "gamedata/keyid",
+      "url": "gamedata/:keyid",
       "icon": "📢",
       "message": "Publish",
       "title": "Status Player",
@@ -475,7 +489,7 @@ define({
     },
     {
       "type": "topic",
-      "url": "game/keyid/clientid",
+      "url": "game/:keyid/:clientid",
       "icon": "🔔",
       "message": "Subscribe",
       "title": "Status Player",
@@ -538,6 +552,44 @@ define({
       }],
       "filename": "source/example/example.js",
       "groupTitle": "Player"
+    },
+    {
+      "type": "topic",
+      "url": "attack/:keyid",
+      "icon": "📢",
+      "message": "Publish",
+      "title": "Attack",
+      "version": "0.0.1",
+      "name": "pub-attack-event",
+      "group": "Event",
+      "description": "<p>Attack enemy of a game by player.</p> ",
+      "parameter": {
+        "fields": {
+          "Parameter": [{
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "id",
+              "description": "<p>The Players-ID.</p> "
+            },
+            {
+              "group": "Parameter",
+              "type": "String",
+              "optional": false,
+              "field": "target",
+              "description": "<p>The Enemys-ID.</p> "
+            }
+          ]
+        }
+      },
+      "examples": [{
+        "name": "payload",
+        "title": "Example usage:",
+        "content": "    MQTT/3.1 0 Connection Accepted\n    {\n      \"id\": \"id_chzy\",\n      \"target\": \"id_targ\",\n    }",
+        "type": "json"
+      }],
+      "filename": "source/example/example.js",
+      "groupTitle": "Event"
     },
   ]
 });
